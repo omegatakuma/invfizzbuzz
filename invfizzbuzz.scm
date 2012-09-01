@@ -16,10 +16,6 @@
 			 (ls lst)
 			 (str strl)
 			 (int intl))
-;	(print "fizzbuzz's lst: "lst);lst
-;	(print "fizzbuzz's n: "n);n
-;	(print "fizzbuzz's str: "str);str
-;	(print "fizzbuzz's int: "int);int
 	(cond
 	  ((null? (cdr ls))(solve lst str int))
 	  ((eq? (car ls) 'fizzbuzz)
@@ -30,10 +26,6 @@
   (let loop ((str str)
 			 (int int)
 			 (result '()))
-;	(print "solve's lst: "lst);lst
-;	(print "solve's str: "str);str
-;	(print "solve's int: "int);int
-;	(print "solve's result: "result);result
 	(cond ((> (length lst) (length str))
 		   (reverse (map (lambda(x)(list-ec (:range v (car x) (+ (last x) 1)) v)) result)))
 		  ((equal? lst (take str (length lst)))
@@ -42,7 +34,6 @@
 
 (define (invfizzbuzz lst)
   (let ((result (fizzbuzz lst)))
-;	(print "result is "result);result
 	(if (null? result)
 	  '()
 	  (print (list-ref result (min-list result))))))
